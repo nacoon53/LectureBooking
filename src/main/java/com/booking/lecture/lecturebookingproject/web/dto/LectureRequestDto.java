@@ -5,6 +5,7 @@ import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -15,15 +16,16 @@ public class LectureRequestDto {
     private String presenter;
     private String location;
     private int maxAttendees;
-    private LocalDateTime startTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime startDate;
     private String contents;
 
     @Builder
-    public LectureRequestDto(String presenter, String location, int maxAttendees, LocalDateTime startTime, String contents) {
+    public LectureRequestDto(String presenter, String location, int maxAttendees, LocalDateTime startDate, String contents) {
         this.presenter = presenter;
         this.location = location;
         this.maxAttendees = maxAttendees;
-        this.startTime = startTime;
+        this.startDate = startDate;
         this.contents = contents;
     }
 
@@ -32,7 +34,7 @@ public class LectureRequestDto {
                 .presenter(presenter)
                 .location(location)
                 .maxAttendees(maxAttendees)
-                .startTime(startTime)
+                .startDate(startDate)
                 .contents(contents)
                 .build();
     }

@@ -28,18 +28,19 @@ public class Lecture extends BaseTimeEntity {
     @Column(name="max_attendees")
     private int maxAttendees;
 
-    @Column(name="start_time")
-    private LocalDateTime startTime;
+    @Column(name="start_date")
+    private LocalDateTime startDate;
 
     @Column(columnDefinition = "TEXT")
     private String contents;
 
     @Builder
-    public Lecture(String presenter, String location, int maxAttendees, LocalDateTime startTime, String contents) {
+    public Lecture(long lectureId, String presenter, String location, int maxAttendees, LocalDateTime startDate, String contents) {
+        this.lectureId = lectureId;
         this.presenter = presenter;
         this.location = location;
         this.maxAttendees = maxAttendees;
-        this.startTime = startTime;
+        this.startDate = startDate;
         this.contents = contents;
     }
 }

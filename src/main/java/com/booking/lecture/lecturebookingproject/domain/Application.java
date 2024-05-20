@@ -5,12 +5,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Application {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -26,7 +28,7 @@ public class Application {
     private int applicationStatus;
 
     @CreatedDate
-    @Column(name="creted_at", updatable = false)
+    @Column(name="created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @Builder

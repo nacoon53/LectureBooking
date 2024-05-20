@@ -15,7 +15,7 @@ public class LectureResponseDto {
     private String presenter;
     private String location;
     private int maxAttendees;
-    private LocalDateTime startTime;
+    private LocalDateTime startDate;
     private String contents;
 
     public LectureResponseDto(Lecture entity) {
@@ -23,7 +23,7 @@ public class LectureResponseDto {
         this.presenter = entity.getPresenter();
         this.location = entity.getLocation();
         this.maxAttendees = entity.getMaxAttendees();
-        this.startTime = entity.getStartTime();
+        this.startDate = entity.getStartDate();
         this.contents  = entity.getContents();
     }
 }

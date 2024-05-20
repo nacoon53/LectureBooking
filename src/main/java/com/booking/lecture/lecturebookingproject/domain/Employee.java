@@ -28,10 +28,10 @@ public class Employee extends BaseTimeEntity {
     private boolean employedFlag;
 
     @Builder
-    public Employee(String employeeId, String name, LocalDateTime hireDate, boolean emplyedFlag) {
+    public Employee(String employeeId, String name, LocalDateTime hireDate, boolean employedFlag) {
         this.employeeId = employeeId;
         this.name = name;
         this.hireDate = hireDate;
-        this.employedFlag = emplyedFlag;
+        this.employedFlag = employedFlag;
     }
 }
